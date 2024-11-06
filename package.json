@@ -1,0 +1,16 @@
+{
+  "name": "content-type",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "msw": "^2.6.0",
+    "vitest": "^2.1.4"
+  }
+}

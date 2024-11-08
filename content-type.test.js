@@ -2,8 +2,6 @@ import { expect, test, beforeAll, afterEach, afterAll } from "vitest";
 import { setupServer } from "msw/node";
 import { http, HttpResponse } from "msw";
 
-let contentType = null;
-
 const server = setupServer(
   http.post("https://example.com/upload", async ({ request }) => {
     const data = await request.formData();
@@ -31,7 +29,10 @@ afterAll(() => server.close());
 
 test("file upload", async () => {
   const data = new FormData();
-  const file = new Blob(["Hello", "world"], { type: "text/plain" });
+  const file = new File(["Hello", "world"], "hello.png", {
+    type: "image/png",
+  });
+
   data.set("file", file, "doc.txt");
 
   const response = await fetch("https://example.com/upload", {

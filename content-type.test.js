@@ -33,7 +33,7 @@ test("file upload", async () => {
     type: "image/png",
   });
 
-  data.set("file", file, "doc.txt");
+  data.set("file", file, "hello.png");
 
   const response = await fetch("https://example.com/upload", {
     method: "POST",
